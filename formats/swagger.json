@@ -1,0 +1,479 @@
+{
+    "swagger": "2.0",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "host": "api.gifs.com",
+    "info": {
+        "version": "beta",
+        "title": "Gifs Public API",
+    },
+    "paths": {
+        "/media/import": {
+            "parameters": [],
+            "post": {
+                "description": "",
+                "operationId": "Import",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "tags": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "attribution": {
+                                    "type": "object",
+                                    "properties": {
+                                        "site": {
+                                            "type": "string"
+                                        },
+                                        "user": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "success": {
+                                    "type": "object",
+                                    "properties": {
+                                        "page": {
+                                            "type": "string"
+                                        },
+                                        "files": {
+                                            "type": "object",
+                                            "properties": {
+                                                "gif": {
+                                                    "type": "string"
+                                                },
+                                                "mp4": {
+                                                    "type": "string"
+                                                },
+                                                "webm": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "success": {
+                                    "page": "https://gifs.com/j1f4r",
+                                    "files": {
+                                        "gif": "https://img.gifs.com/j1f4r.gif",
+                                        "mp4": "https://img.gifs.com/j1f4r.mp4",
+                                        "webm": "https://img.gifs.com/j1f4r.webm"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": ""
+            }
+        },
+        "/media/upload": {
+            "parameters": [],
+            "post": {
+                "description": "",
+                "operationId": "Upload",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "file": {
+                                    "type": "binary"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "tags": {
+                                    "type": "string"
+                                },
+                                "nsfw": {
+                                    "type": "boolean"
+                                },
+                                "attribution_site": {
+                                    "type": "string"
+                                },
+                                "attribution_user": {
+                                    "type": "string"
+                                },
+                                "attribution_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "file"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/media"
+                        }
+                    }
+                },
+                "summary": ""
+            }
+        },
+        "/favicon.ico": {
+            "parameters": [],
+            "get": {
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Forwarded-Proto",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Request-Id",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Total-Route-Time",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "X-Forwarded-Port",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Via",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Connect-Time",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "X-Forwarded-For",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Request-Start",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "reference": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "message": "invalid endpoint",
+                                "reference": "https://github.com/gifs/public-api"
+                            }
+                        }
+                    }
+                },
+                "summary": ""
+            }
+        },
+        "/import": {
+            "parameters": [],
+            "get": {
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Request-Id",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Request-Start",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Total-Route-Time",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Connect-Time",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "X-Forwarded-For",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Forwarded-Proto",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Forwarded-Port",
+                        "in": "header",
+                        "description": "",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Via",
+                        "in": "header",
+                        "description": "",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "reference": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "message": "invalid endpoint",
+                                "reference": "https://github.com/gifs/public-api"
+                            }
+                        }
+                    }
+                },
+                "summary": ""
+            }
+        },
+        "/media": {
+            "parameters": [],
+            "get": {
+                "description": "",
+                "operationId": "Media",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "source",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "page": {
+                                    "type": "string"
+                                },
+                                "files": {
+                                    "type": "object",
+                                    "properties": {
+                                        "gif": {
+                                            "type": "string"
+                                        },
+                                        "jpg": {
+                                            "type": "string"
+                                        },
+                                        "mp4": {
+                                            "type": "string"
+                                        },
+                                        "webm": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "embed": {
+                                    "type": "string"
+                                },
+                                "meta": {
+                                    "type": "object",
+                                    "properties": {
+                                        "duration": {
+                                            "type": "string"
+                                        },
+                                        "frames": {
+                                            "type": "string"
+                                        },
+                                        "height": {
+                                            "type": "string"
+                                        },
+                                        "width": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "page": "https://gifs.com/gif/qx2rVD",
+                                "files": {
+                                    "gif": "https://j.gifs.com/qx2rVD.gif",
+                                    "jpg": "https://j.gifs.com/qx2rVD.jpg",
+                                    "mp4": "https://j.gifs.com/qx2rVD.mp4",
+                                    "webm": "https://j.gifs.com/qx2rVD.webm"
+                                },
+                                "embed": "<iframe src='https://gifs.com/embed/qx2rVD' frameborder='0' scrolling='no' width='720' height='404' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>",
+                                "meta": {
+                                    "duration": "15s",
+                                    "frames": "375",
+                                    "height": "404",
+                                    "width": "720"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "examples": {
+                            "application/json": {
+                                "message": "expecting value \"source\""
+                            }
+                        }
+                    }
+                },
+                "summary": ""
+            }
+        }
+    },
+    "definitions": {
+        "media": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "object",
+                    "properties": {
+                        "page": {
+                            "type": "string"
+                        },
+                        "files": {
+                            "type": "object",
+                            "properties": {
+                                "gif": {
+                                    "type": "string"
+                                },
+                                "mp4": {
+                                    "type": "string"
+                                },
+                                "webm": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,350 @@
+#%RAML 0.8
+title: Gifs Public API
+version: beta
+baseUri: 'http://api.gifs.com/'
+mediaType: ''
+protocols: []
+documentation:
+  - title: Gifs Public API
+/media:
+  displayName: media
+  description: ''
+  /import:
+    displayName: import
+    description: ''
+    uriParameters: {}
+    post:
+      displayName: Import
+      body:
+        application/json:
+          example: |-
+            {
+                "source": "http://tumblr.com/catflip.gif",
+                "title": "Cat does a backflip into the pool",
+                "tags": [
+                    "cat",
+                    "backflip",
+                    "pool"
+                ],
+                "attribution": {
+                    "site": "twitter",
+                    "user": "montanaflynn"
+                }
+            }
+          schema: |-
+            {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "attribution": {
+                        "type": "object",
+                        "properties": {
+                            "site": {
+                                "type": "string"
+                            },
+                            "user": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+      headers: {}
+      responses:
+        '201':
+          body:
+            application/json:
+              schema: |-
+                {
+                    "type": "object",
+                    "properties": {
+                        "success": {
+                            "type": "object",
+                            "properties": {
+                                "page": {
+                                    "type": "string"
+                                },
+                                "files": {
+                                    "type": "object",
+                                    "properties": {
+                                        "gif": {
+                                            "type": "string"
+                                        },
+                                        "mp4": {
+                                            "type": "string"
+                                        },
+                                        "webm": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+              example: |-
+                {
+                    "success": {
+                        "page": "https://gifs.com/j1f4r",
+                        "files": {
+                            "gif": "https://img.gifs.com/j1f4r.gif",
+                            "mp4": "https://img.gifs.com/j1f4r.mp4",
+                            "webm": "https://img.gifs.com/j1f4r.webm"
+                        }
+                    }
+                }
+      queryParameters: {}
+  /upload:
+    displayName: upload
+    description: ''
+    uriParameters: {}
+    post:
+      displayName: Upload
+      body:
+        multipart/form-data:
+          formParameters:
+            file:
+              type: binary
+              required: true
+            title:
+              type: string
+            tags:
+              type: string
+            nsfw:
+              type: boolean
+            attribution_site:
+              type: string
+            attribution_user:
+              type: string
+            attribution_url:
+              type: string
+      headers: {}
+      responses:
+        '201':
+          body:
+            application/json:
+              schema: |-
+                {
+                    "$ref": "#/definitions/media"
+                }
+              example: ''
+      queryParameters: {}
+  uriParameters: {}
+  get:
+    displayName: Media
+    headers: {}
+    responses:
+      '200':
+        body:
+          application/json:
+            schema: |-
+              {
+                  "type": "object",
+                  "properties": {
+                      "page": {
+                          "type": "string"
+                      },
+                      "files": {
+                          "type": "object",
+                          "properties": {
+                              "gif": {
+                                  "type": "string"
+                              },
+                              "jpg": {
+                                  "type": "string"
+                              },
+                              "mp4": {
+                                  "type": "string"
+                              },
+                              "webm": {
+                                  "type": "string"
+                              }
+                          }
+                      },
+                      "embed": {
+                          "type": "string"
+                      },
+                      "meta": {
+                          "type": "object",
+                          "properties": {
+                              "duration": {
+                                  "type": "string"
+                              },
+                              "frames": {
+                                  "type": "string"
+                              },
+                              "height": {
+                                  "type": "string"
+                              },
+                              "width": {
+                                  "type": "string"
+                              }
+                          }
+                      }
+                  }
+              }
+            example: |-
+              {
+                  "page": "https://gifs.com/gif/qx2rVD",
+                  "files": {
+                      "gif": "https://j.gifs.com/qx2rVD.gif",
+                      "jpg": "https://j.gifs.com/qx2rVD.jpg",
+                      "mp4": "https://j.gifs.com/qx2rVD.mp4",
+                      "webm": "https://j.gifs.com/qx2rVD.webm"
+                  },
+                  "embed": "<iframe src='https://gifs.com/embed/qx2rVD' frameborder='0' scrolling='no' width='720' height='404' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>",
+                  "meta": {
+                      "duration": "15s",
+                      "frames": "375",
+                      "height": "404",
+                      "width": "720"
+                  }
+              }
+      '400':
+        body:
+          application/json:
+            schema: |-
+              {
+                  "type": "object",
+                  "properties": {
+                      "message": {
+                          "type": "string"
+                      }
+                  }
+              }
+            example: "{\n    \"message\": \"expecting value \\\"source\\\"\"\n}"
+    queryParameters:
+      source:
+        type: string
+/favicon.ico:
+  displayName: favicon.ico
+  description: ''
+  uriParameters: {}
+  get:
+    headers:
+      X-Forwarded-Proto:
+        type: string
+      Accept:
+        type: string
+      X-Request-Id:
+        type: string
+      Total-Route-Time:
+        type: integer
+      X-Forwarded-Port:
+        type: integer
+      Via:
+        type: string
+      Connect-Time:
+        type: integer
+      X-Forwarded-For:
+        type: string
+      X-Request-Start:
+        type: integer
+    responses:
+      '404':
+        body:
+          application/json:
+            schema: |-
+              {
+                  "type": "object",
+                  "properties": {
+                      "message": {
+                          "type": "string"
+                      },
+                      "reference": {
+                          "type": "string"
+                      }
+                  }
+              }
+            example: |-
+              {
+                  "message": "invalid endpoint",
+                  "reference": "https://github.com/gifs/public-api"
+              }
+    queryParameters: {}
+/import:
+  displayName: import
+  description: ''
+  uriParameters: {}
+  get:
+    headers:
+      Accept:
+        type: string
+      X-Request-Id:
+        type: string
+      X-Request-Start:
+        type: integer
+      Total-Route-Time:
+        type: integer
+      Connect-Time:
+        type: integer
+      X-Forwarded-For:
+        type: string
+      X-Forwarded-Proto:
+        type: string
+      X-Forwarded-Port:
+        type: integer
+      Via:
+        type: string
+    responses:
+      '404':
+        body:
+          application/json:
+            schema: |-
+              {
+                  "type": "object",
+                  "properties": {
+                      "message": {
+                          "type": "string"
+                      },
+                      "reference": {
+                          "type": "string"
+                      }
+                  }
+              }
+            example: |-
+              {
+                  "message": "invalid endpoint",
+                  "reference": "https://github.com/gifs/public-api"
+              }
+    queryParameters: {}
+schemas:
+  - media: |-
+      {
+          "type": "object",
+          "properties": {
+              "success": {
+                  "type": "object",
+                  "properties": {
+                      "page": {
+                          "type": "string"
+                      },
+                      "files": {
+                          "type": "object",
+                          "properties": {
+                              "gif": {
+                                  "type": "string"
+                              },
+                              "mp4": {
+                                  "type": "string"
+                              },
+                              "webm": {
+                                  "type": "string"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }

@@ -67,6 +67,7 @@ Content-Type: application/json; charset=utf-8
         "mp4": "https://j.gifs.com/wpk4Lw.mp4",
         "webm": "https://j.gifs.com/wpk4Lw.webm"
     },
+    "oembed": "https://gifs.com/oembed/wpk4Lw",
     "embed": "<iframe src='https://gifs.com/embed/wpk4Lw' frameborder='0' scrolling='no' width='309' height='291' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>",
     "meta": {
         "duration": "2.61s",
@@ -116,6 +117,7 @@ Content-Type: application/json; charset=utf-8
         "mp4": "https://j.gifs.com/2k9BMv.mp4",
         "webm": "https://j.gifs.com/2k9BMv.webm"
     },
+    "oembed": "https://gifs.com/oembed/2k9BMv",
     "embed": "<iframe src='https://gifs.com/embed/2k9BMv' frameborder='0' scrolling='no' width='640' height='360' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>",
     "meta": {
         "duration": "4.104s",

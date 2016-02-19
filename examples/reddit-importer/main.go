@@ -89,7 +89,9 @@ func main() {
 			defer res.Body.Close()
 
 			type importResponse struct {
-				Page string `json:"page"`
+				Success struct {
+					Page string `json:"page"`
+				} `json:"success"`
 			}
 
 			ires := new(importResponse)
@@ -123,7 +125,7 @@ func main() {
 			}
 
 			fmt.Printf("%s... %s %s\n",
-				titleCopy[0:titlePrintLen], status, ires.Page)
+				titleCopy[0:titlePrintLen], status, ires.Success.Page)
 
 		}
 	}

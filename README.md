@@ -43,12 +43,12 @@ Content-Type: application/json
 Accept: application/json
 Accept-Charset: utf-8
 {
- "source": "https://45.media.tumblr.com/72fc3bfa5598d0b2bafcc118c651356e/tumblr_mnp5ohGCqK1rmszj9o1_400.gif",
+ "source": "http://i.imgur.com/WUYpq61.gif",
  "title": "Cat does a front flip",
  "tags": ["cat", "flipping", "cat flip", "amazing cats"],
  "attribution": {
    "site": "twitter",
-   "user": "montanaflynn"
+   "user": "gifsCom"
  }
 }
 ```

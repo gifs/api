@@ -1,4 +1,4 @@
-# API Documentation
+# Gifs API ![](https://img.shields.io/badge/API-online-brightgreen.svg)
 
 The gifs API makes it easy to integrate our functionality into your apps.
 

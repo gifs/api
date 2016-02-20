@@ -2,6 +2,8 @@
 
 Import media found on one or more sub-reddits or user created multi-reddits.
 
+![](https://j.gifs.com/kRoqvJ.gif)
+
 ### Usage:
 
 ```

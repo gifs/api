@@ -8,11 +8,6 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 [Example get request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
 
-#### I just made something cool with the gifs API! 
-
-Feel free to send a push request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
-
-
 ## Media Routes
 
 The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for the source file and we accept the following image content types:
@@ -139,3 +134,16 @@ Content-Type: application/json; charset=utf-8
  }
 }
 ```
+# FAQs
+
+#### I just made something cool with the gifs API! 
+
+Feel free to send a push request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
+
+#### What are you adding next!
+
+:wink: You'll have to watch the gifs API to see our public releases.
+
+#### Can I help or contribute, or pretty please see a sneak peak?
+
+Oh - yes! We'd love to get some feedback. Please feel free to [get in touch with us](mailto:rory@gifs.com).

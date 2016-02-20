@@ -1,8 +1,8 @@
-# Gifs API Documentation ![](https://img.shields.io/badge/API-online-brightgreen.svg)
+# Gifs API Documentation [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://api.gifs.com)
 
-The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4. 
+The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 
-Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:. 
+Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:.
 
 #### Can I see an example?
 
@@ -10,18 +10,13 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 ## Media Routes
 
-The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for the source file and we accept the following image content types:
+The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for all media being added. We support converting the following file mime types: `image/gif`, `video/mp4`, `video/webm`.
 
-* `image/gif`
-* `video/mp4`
-* `video/webm`
+### Import Endpoint `https://api.gifs.com/media/import`
 
-When using the `/import` endpoint you can link to `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, `vine` html URLs instead of the actual media and we'll automagically find the best quality to import.
+Import media that's already available online with the `/import` endpoint. You can also link directly to a `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` web page instead of the actual the source file and we'll automagically find the best quality to import.
 
-### Import `POST https://api.gifs.com/media/import`
-
-If the media is already online then you can simply send us the URL to add any media that we support using a POST request with the following schema as `content-tye: application/json`:
-
+Send a `POST` request with the following schema as `content-tye: application/json`:
 
 | Parameter       | Type         | Required?  | Description                          |
 | -------------   |--------------|------------|--------------------------------------|
@@ -85,9 +80,9 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-### Upload Endpoint `POST https://api.gifs.com/media/upload`
+### Upload Endpoint `https://api.gifs.com/media/upload`
 
-You can upload your media by sending a `multipart/form-data` POST request with the following form fields:
+Upload media by sending a `POST` `multipart/form-data` request with the following form fields:
 
 | Parameter         | Type      | Required?  | Description                                 |
 | ------------------|-----------|------------|---------------------------------------------|
@@ -136,9 +131,9 @@ Content-Type: application/json; charset=utf-8
 ```
 # FAQs
 
-#### I just made something cool with the gifs API! 
+#### I just made something cool with the gifs API!
 
-Feel free to send a push request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
+Feel free to send a pull request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
 
 #### What are you adding next!
 

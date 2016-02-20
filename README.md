@@ -10,13 +10,13 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 ## Media Routes
 
-The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for all media being added. We support converting the following file mime types: `image/gif`, `video/mp4`, `video/webm`.
+The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for all media being added.
 
-### Import Endpoint `https://api.gifs.com/media/import`
+### Import Endpoint  <small>`POST https://api.gifs.com/media/import`</small>
 
-Import media that's already available online with the `/import` endpoint. You can also link directly to a `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` web page instead of the actual the source file and we'll automagically find the best quality to import.
+We support importing the following file mime types: `image/gif`, `video/mp4`, `video/webm` and you can also link directly to a `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` web page and we'll automagically find the best quality file to import.
 
-Send a `POST` request with the following schema as `content-tye: application/json`:
+Send a `POST` request with the following schema as `content-type: application/json`:
 
 | Parameter       | Type         | Required?  | Description                          |
 | -------------   |--------------|------------|--------------------------------------|
@@ -80,9 +80,9 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-### Upload Endpoint `https://api.gifs.com/media/upload`
+### Upload Endpoint <small>`POST https://api.gifs.com/media/upload`</small>
 
-Upload media by sending a `POST` `multipart/form-data` request with the following form fields:
+You can upload `image/gif`, `video/mp4`, and `video/webm` media by sending a `POST` `multipart/form-data` request with the following form fields:
 
 | Parameter         | Type      | Required?  | Description                                 |
 | ------------------|-----------|------------|---------------------------------------------|

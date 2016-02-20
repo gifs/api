@@ -8,6 +8,10 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 [Example get request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
 
+#### I just made something cool with the gifs API! 
+
+Feel free to send a push request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
+
 
 ## Media Routes
 

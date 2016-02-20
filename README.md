@@ -1,6 +1,13 @@
 # Gifs API Documentation ![](https://img.shields.io/badge/API-online-brightgreen.svg)
 
-The gifs API makes it easy to integrate our functionality into your apps.
+The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4. 
+
+Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:. 
+
+#### Can I see an example?
+
+[Example get request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
+
 
 ## Media Routes
 

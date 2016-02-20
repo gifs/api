@@ -1,16 +1,15 @@
 # Bulk Uploader
 
-Add your entire collection of gifs or short video files to gifs.com with our easy to use CLI.
+Add your entire collection of short media to gifs.com from the command line.
 
-### Usage
+![](https://j.gifs.com/jRnpx5.gif)
+
+### Usage:
 
 ```
-go get github.com/gifs/bulk-uploader/...
-gifs-bulk-uploader ./path/to/directory
+# Clone this repo
+git clone git@github.com:gifs/api.git; cd api/examples/bulk-uploader
+
+# Upload a directory
+go run main.go ~/Gifs
 ```
-
-### Todos
-
-- check file size
-- check file duration
-- check file type

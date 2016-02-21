@@ -6,13 +6,13 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 #### Can I see an example?
 
-[Example get request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
+[Example request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
 
 ## Media Routes
 
 The media routes allows anyone to add short media from various sources including external URLs and uploading from disk. There is a `150mb` size and `30s` time limit for all media being added.
 
-### Import Endpoint [![](https://img.shields.io/badge/POST-https%3A%2F%2Fapi.gifs.com%2Fmedia%2Fimport-blue.svg)](https://api.gifs.com/media/import)
+### Import Endpoint `POST https://api.gifs.com/media/import`
 
 We support importing the following file mime types: `image/gif`, `video/mp4`, `video/webm` and you can also link directly to a `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` web page and we'll automagically find the best quality file to import.
 
@@ -80,7 +80,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-### Upload Endpoint [![](https://img.shields.io/badge/POST-https%3A%2F%2Fapi.gifs.com%2Fmedia%2Fupload-blue.svg)](https://api.gifs.com/media/upload)
+### Upload Endpoint `POST https://api.gifs.com/media/upload`
 
 You can upload `image/gif`, `video/mp4`, and `video/webm` media by sending a `POST` `multipart/form-data` request with the following form fields:
 

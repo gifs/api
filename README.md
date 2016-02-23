@@ -1,4 +1,4 @@
-# Introducing the gifs.com gifs API [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://api.gifs.com)
+# Introducing the [gifs.com](https://gifs.com) API [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://gifs.com)
 
 *Everyone wishes for something...*
 >"...I wish I could make gifs from vines or instagram videos"
@@ -9,7 +9,7 @@
 
 *Your wishes have been granted*
 
-The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
+The [gifs.com](https://gifs.com) API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 
 Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:.
 
@@ -20,7 +20,8 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 [Documentation](https://github.com/gifs/api/tree/master/DOCUMENTATION.md) |
 [Examples](https://github.com/gifs/api/tree/master/examples) |
 [Get in Touch](mailto:rory@gifs.com) |
-[FAQs](https://github.com/gifs/api#faqs)
+[FAQs](https://github.com/gifs/api#faqs) |
+[Snippets](https://github.com/gifs/api/tree/master/SNIPPETS.md)
 
 ## Media Routes
 

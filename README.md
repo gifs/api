@@ -13,11 +13,11 @@
 
 The [gifs.com](https://gifs.com) API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 
-Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:.
-
 #### Can I see an example?
 
 [Example request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
+
+Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `instagram`, `twitter`, `facebook`, or `vine` links and we transcode your media lightning fast and serve it up in our awesome gifs player :zap:.
 
 [Documentation](https://github.com/gifs/api/tree/master/DOCUMENTATION.md) |
 [Examples](https://github.com/gifs/api/tree/master/examples) |

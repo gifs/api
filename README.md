@@ -17,7 +17,7 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 [Example request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
 
-[Documentation](https://github.com/gifs/api/documentation) |
+[Documentation](https://github.com/gifs/api/tree/master/DOCUMENTATION.md) |
 [Examples](https://github.com/gifs/api/tree/master/examples) |
 [Get in Touch](mailto:rory@gifs.com)
 

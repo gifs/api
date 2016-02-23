@@ -19,9 +19,10 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 [Documentation](https://github.com/gifs/api/tree/master/DOCUMENTATION.md) |
 [Examples](https://github.com/gifs/api/tree/master/examples) |
+[Snippets](https://github.com/gifs/api/tree/master/SNIPPETS.md) |
 [Get in Touch](mailto:rory@gifs.com) |
-[FAQs](https://github.com/gifs/api#faqs) |
-[Snippets](https://github.com/gifs/api/tree/master/SNIPPETS.md)
+[FAQs](https://github.com/gifs/api#faqs) 
+
 
 ## Media Routes
 

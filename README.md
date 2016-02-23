@@ -1,4 +1,13 @@
-# Gifs API Documentation [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://api.gifs.com)
+# Introducing the gifs.com gifs API [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://api.gifs.com)
+
+*Everyone wishes for something...*
+>"...I wish I could make gifs from vines or instagram videos"
+
+>"...I wish I could convert my gifs to optimized HTML5 videos, .webm's, or .mp4s"
+
+>"...I wish the transcoding was the fastest in the world"
+
+*Your wishes have been granted* :100:
 
 The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 
@@ -7,6 +16,10 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 #### Can I see an example?
 
 [Example request](http://api.gifs.com/media/import?source=https://zippy.gfycat.com/LimpingEveryHairstreak.webm&title=ClapClapClap) - try switching out the `source` with a vine link!
+
+[Documentation](https://github.com/gifs/api/documentation) |
+[Examples](https://github.com/gifs/api/tree/master/examples) |
+[Get in Touch](mailto:rory@gifs.com)
 
 ## Media Routes
 

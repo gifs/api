@@ -7,7 +7,7 @@
 
 >"...I wish the transcoding was the fastest in the world"
 
-*Your wishes have been granted* :100:
+*Your wishes have been granted*
 
 The gifs API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 
@@ -19,7 +19,8 @@ Send us any `.gif`, `.mp4`, `.webm`, `giphy`, `imgur`, `gfycat`, `streamable`, `
 
 [Documentation](https://github.com/gifs/api/tree/master/DOCUMENTATION.md) |
 [Examples](https://github.com/gifs/api/tree/master/examples) |
-[Get in Touch](mailto:rory@gifs.com)
+[Get in Touch](mailto:rory@gifs.com) |
+[FAQs](https://github.com/gifs/api#faqs)
 
 ## Media Routes
 
@@ -144,13 +145,15 @@ Content-Type: application/json; charset=utf-8
 ```
 # FAQs
 
-#### I just made something cool with the gifs API!
+#### I just made something cool with the gifs API, can you feature it?
 
 Feel free to send a pull request! If it's awesome, we'll merge it into our [examples](https://github.com/gifs/api/tree/master/examples).
 
-#### What are you adding next!
+#### What are you adding next?
 
-:wink: You'll have to watch the gifs API to see our public releases.
+The gifs API is the foundation for all gifs projects. Up next is:
+
+Captioning and effects! :fire:
 
 #### Can I help or contribute, or pretty please see a sneak peak?
 

@@ -15,6 +15,7 @@ type Post struct {
 	Name   string `json:"name"`
 	URL    string `json:"url"`
 	Title  string `json:"title"`
+	Author string `json:"author"`
 	Over18 bool   `json:"over_18"`
 	Media  struct {
 		Oembed struct {
@@ -70,23 +71,35 @@ func main() {
 	for _, p := range posts {
 		if p.Media.Oembed.Type == "video" {
 
+			type attribution struct {
+				Site string `json:"site"`
+				User string `json:"user"`
+			}
+
 			type importRequest struct {
-				Source string   `json:"source"`
-				Title  string   `json:"title"`
-				Tags   []string `json:"tags"`
-				NSFW   bool     `json:"NSFW"`
+				Source      string      `json:"source"`
+				Title       string      `json:"title"`
+				Tags        []string    `json:"tags"`
+				NSFW        bool        `json:"NSFW"`
+				Attribution attribution `json:"attribution"`
 			}
 
 			payload, _ := json.Marshal(importRequest{
 				Source: p.URL,
 				Title:  p.Title,
 				NSFW:   p.Over18,
+				Attribution: attribution{
+					Site: "reddit",
+					User: p.Author,
+				},
 			})
 
-			baseURL := "http://api.gifs.com/media/import"
+			baseURL := "https://api.gifs.com/media/import"
 			req, _ := http.NewRequest("POST", baseURL, bytes.NewReader(payload))
-			res, _ := http.DefaultClient.Do(req)
-			defer res.Body.Close()
+			res, err := http.DefaultClient.Do(req)
+			if err != nil {
+				log.Fatal(err)
+			}
 
 			type importResponse struct {
 				Success struct {
@@ -95,6 +108,7 @@ func main() {
 			}
 
 			ires := new(importResponse)
+			defer res.Body.Close()
 			err = json.NewDecoder(res.Body).Decode(ires)
 			if err != nil {
 				log.Fatal(err)

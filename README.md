@@ -1,5 +1,7 @@
 # Introducing the [gifs.com](https://gifs.com) API [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://gifs.com)
 
+<img align="right" src="https://storage.googleapis.com/cdn.gifs.com/genie-fadein-animation.gif">
+
 *Everyone wishes for something...*
 >"...I wish I could make gifs from vines or instagram videos."
 

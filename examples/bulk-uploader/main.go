@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 )
 
-const baseURL = "http://api.gifs.com"
+const baseURL = "https://api.gifs.com"
 
 type gifResponse struct {
 	Success struct {

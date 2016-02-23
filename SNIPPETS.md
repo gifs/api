@@ -1,8 +1,6 @@
 # Code Snippets
 
-For your convenience we've created code snippets for using the API in various programming languages:
-
-## Import Endpoint
+For your convenience we've added code snippets for importing media in various programming languages including `C`, `C#`, `Go`, `Java`, `jQuery`, `Node.js`, `Objective-C`, `OCaml`, `PHP`, `Python`, `Ruby` and `Swift`.
 
 ### cURL
 

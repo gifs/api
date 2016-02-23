@@ -1,13 +1,13 @@
 # Introducing the [gifs.com](https://gifs.com) API [![](https://img.shields.io/badge/API-online-brightgreen.svg)](https://gifs.com)
 
 *Everyone wishes for something...*
->"...I wish I could make gifs from vines or instagram videos"
+>"...I wish I could make gifs from vines or instagram videos."
 
->"...I wish I could convert my gifs to optimized HTML5 videos, .webm's, or .mp4s"
+>"...I wish I could convert my gifs to optimized HTML5 videos, .webm's, or .mp4s."
 
->"...I wish the transcoding was the fastest in the world"
+>"...I wish the transcoding was the fastest in the world."
 
-*Your wishes have been granted*
+*Your wishes have been granted.*
 
 The [gifs.com](https://gifs.com) API makes it dead simple to convert and transcode a vast array of media into our HTML5 optimized gifs.com player, a compressed .gif, .webm and .mp4.
 

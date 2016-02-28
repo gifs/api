@@ -57,7 +57,7 @@ Attribution object schema is:
 ```HTTP
 POST /media/import HTTP/1.1
 Host: api.gifs.com
-Token: beta-access-token-monty
+gifs-api-key: beta-access-token-monty
 Content-Type: application/json
 Accept: application/json
 Accept-Charset: utf-8

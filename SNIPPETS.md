@@ -6,12 +6,12 @@ For your convenience we've added code snippets for importing media in various pr
 
 ```shell
 curl -X POST -H "Gifs-API-Key: gifs56d63999f0f34" -H "Content-Type: application/json" -d '{
- "source": "http://i.imgur.com/WUYpq61.gif",
- "title": "Cat does a front flip",
- "tags": ["cat", "flipping", "cat flip", "amazing cats"],
+ "source": "https://vine.co/v/ibAU6OH2I0K",
+ "title": "2015 Craziness",
+ "tags": ["crazy", "hand drawn", "2015", "art"],
  "attribution": {
-   "site": "twitter",
-   "user": "gifsCom"
+   "site": "vine",
+   "user": "AliciaHerber"
  }
 }' "https://api.gifs.com/media/import"
 ```
@@ -29,7 +29,7 @@ headers = curl_slist_append(headers, "Gifs-API-Key: gifs56d63999f0f34");
 headers = curl_slist_append(headers, "Content-Type: application/json");
 curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
 
-curl_easy_setopt(hnd, CURLOPT_POSTFIELDS, "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}");
+curl_easy_setopt(hnd, CURLOPT_POSTFIELDS, "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}");
 
 CURLcode ret = curl_easy_perform(hnd);
 ```
@@ -41,7 +41,7 @@ var client = new RestClient("https://api.gifs.com/media/import");
 var request = new RestRequest(Method.POST);
 request.AddHeader("Content-Type", "Gifs-API-Key: gifs56d63999f0f34");
 request.AddHeader("Content-Type", "application/json");
-request.AddParameter("application/json", "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -50,7 +50,7 @@ IRestResponse response = client.Execute(request);
 ```go
 url := "https://api.gifs.com/media/import"
 
-payload := strings.NewReader("{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}")
+payload := strings.NewReader("{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}")
 
 req, _ := http.NewRequest("POST", url, payload)
 req.Header.Add("Gifs-API-Key", "gifs56d63999f0f34")
@@ -71,7 +71,7 @@ fmt.Println(string(body))
 HttpResponse<String> response = Unirest.post("https://api.gifs.com/media/import")
   .header("Gifs-API-Key", "gifs56d63999f0f34")
   .header("Content-Type", "application/json")
-  .body("{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}")
+  .body("{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}")
   .asString();
 ```
 
@@ -88,7 +88,7 @@ var settings = {
     "Content-Type": "application/json"
   },
   "processData": false,
-  "data": "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}"
+  "data": "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -125,10 +125,10 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ source: 'http://i.imgur.com/WUYpq61.gif',
-  title: 'Cat does a front flip',
-  tags: [ 'cat', 'flipping', 'cat flip', 'amazing cats' ],
-  attribution: { site: 'twitter', user: 'gifsCom' } }));
+req.write(JSON.stringify({ source: 'https://vine.co/v/ibAU6OH2I0K',
+  title: '2015 Craziness',
+  tags: [ 'cat', 'hand drawn', 'cat flip', 'art' ],
+  attribution: { site: 'vine.co', user: 'AliciaHerber' } }));
 req.end();
 ```
 
@@ -140,10 +140,10 @@ req.end();
 NSDictionary *headers = @{ @"Gifs-API-Key": @"gifs56d63999f0f34",
                         @"Content-Type": @"application/json" };
 
-NSDictionary *parameters = @{ @"source": @"http://i.imgur.com/WUYpq61.gif",
-                              @"title": @"Cat does a front flip",
-                              @"tags": @[ @"cat", @"flipping", @"cat flip", @"amazing cats" ],
-                              @"attribution": @{ @"site": @"twitter", @"user": @"gifsCom" } };
+NSDictionary *parameters = @{ @"source": @"https://vine.co/v/ibAU6OH2I0K",
+                              @"title": @"2015 Craziness",
+                              @"tags": @[ @"crazy", @"hand drawn", @"2015", @"art" ],
+                              @"attribution": @{ @"site": @"vine.co", @"user": @"AliciaHerber" } };
 
 NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
 
@@ -179,7 +179,7 @@ let headers = Header.init ()
   |> fun h -> Header.add h "Gifs-API-Key" "gifs56d63999f0f34"
   |> fun h -> Header.add h "Content-Type" "application/json"
 in
-let body = Cohttp_lwt_body.of_string "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}" in
+let body = Cohttp_lwt_body.of_string "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}" in
 
 Client.call ~headers ~body `POST uri
 >>= fun (res, body_stream) ->
@@ -199,12 +199,12 @@ $request->setHeaders(array(
 ));
 
 $request->setBody('{
- "source": "http://i.imgur.com/WUYpq61.gif",
- "title": "Cat does a front flip",
- "tags": ["cat", "flipping", "cat flip", "amazing cats"],
+ "source": "https://vine.co/v/ibAU6OH2I0K",
+ "title": "2015 Craziness",
+ "tags": ["crazy", "hand drawn", "2015", "art"],
  "attribution": {
-   "site": "twitter",
-   "user": "gifsCom"
+   "site": "vine.co",
+   "user": "AliciaHerber"
  }
 }');
 
@@ -224,7 +224,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.gifs.com")
 
-payload = "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}"
+payload = "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}"
 
 headers = { 'Gifs-API-Key': "gifs56d63999f0f34", 'Content-Type': "application/json" }
 
@@ -251,7 +251,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["Gifs-API-Key"] = 'gifs56d63999f0f34'
 request["Content-Type"] = 'application/json'
-request.body = "{\n \"source\": \"http://i.imgur.com/WUYpq61.gif\",\n \"title\": \"Cat does a front flip\",\n \"tags\": [\"cat\", \"flipping\", \"cat flip\", \"amazing cats\"],\n \"attribution\": {\n   \"site\": \"twitter\",\n   \"user\": \"gifsCom\"\n }\n}"
+request.body = "{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -263,12 +263,12 @@ puts response.read_body
 import Foundation
 
 let parameters = [
-  "source": "http://i.imgur.com/WUYpq61.gif",
-  "title": "Cat does a front flip",
-  "tags": ["cat", "flipping", "cat flip", "amazing cats"],
+  "source": "https://vine.co/v/ibAU6OH2I0K",
+  "title": "2015 Craziness",
+  "tags": ["crazy", "hand drawn", "2015", "art"],
   "attribution": [
-    "site": "twitter",
-    "user": "gifsCom"
+    "site": "vine.co",
+    "user": "AliciaHerber"
   ]
 ]
 

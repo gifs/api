@@ -4,6 +4,7 @@
  */
 
 const gifs = require('gifs-api');
+const spinner = require('cli-spinner').Spinner;
 
 function main(argv) {
   if (argv.length < 1) {
@@ -12,6 +13,9 @@ function main(argv) {
   }
 
   argv.forEach(function(sourceURL) {
+    var spinObj = new spinner(sourceURL);
+    spinObj.setSpinnerString('▁▃▄▅▆▇█▇▆▅▄▃');
+    spinObj.start();
     var params = {
       source: sourceURL,
       author: process.env.LOGNAME,
@@ -19,7 +23,8 @@ function main(argv) {
     };
 
     gifs.import(params, function(status, response) {
-      console.log('url', sourceURL, 'status', status, 'response', response);
+      spinObj.stop(true);
+      console.log('\nurl', sourceURL, 'status', status, '\nresponse', response);
     });
   });
 }

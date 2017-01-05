@@ -50,7 +50,15 @@ IRestResponse response = client.Execute(request);
 ```go
 url := "https://api.gifs.com/media/import"
 
-payload := strings.NewReader("{\n \"source\": \"https://vine.co/v/ibAU6OH2I0K\",\n \"title\": \"2015 Craziness\",\n \"tags\": [\"crazy\", \"hand drawn\", \"2015\", \"art\"],\n \"attribution\": {\n   \"site\": \"vine.co\",\n   \"user\": \"AliciaHerber\"\n }\n}")
+payload := strings.NewReader(`{
+ "source": "https://vine.co/v/ibAU6OH2I0K",
+ "title": "2015 Craziness",
+ "tags": ["crazy", "hand drawn", "2015", "art"],
+ "attribution": {
+   "site": "vine.co",
+   "user": "AliciaHerber"
+ }
+}`)
 
 req, _ := http.NewRequest("POST", url, payload)
 req.Header.Add("Gifs-API-Key", "gifs56d63999f0f34")
